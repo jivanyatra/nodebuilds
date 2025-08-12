@@ -1,0 +1,12 @@
+services:
+  node:
+    image: jivanyatra/nodebuilds:latest
+    container_name: "node"
+    volumes:
+      - ./build_folder:/home/node/app
+    user: "node"
+    environment:
+      - PUID=1125433
+      - PGID=1049089
+
+    # docker run --rm -d --name node --workdir /home/node/app/ --volume ./build_folder:/home/node/app --user node -e PUID=1125433 -e PGID=1049089 -it node:lts-alpine sh
